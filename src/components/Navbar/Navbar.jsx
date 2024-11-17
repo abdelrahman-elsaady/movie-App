@@ -10,7 +10,7 @@ import { FaFilm } from 'react-icons/fa'; // Import an icon
 
 import { langContext } from '../../context/lang';
 import { EN } from "../../Lang/En";
-import { AR } from "../../Lang/AR";
+import { AR } from "../../Lang/Ar";
 
 
 export default function Navbarr() {

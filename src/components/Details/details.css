@@ -1,0 +1,58 @@
+/* Container for the entire page */
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes up the full height of the viewport */
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* Card styling */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Limit the maximum width of the card */
+  width: 100%; /* Ensure the card takes up the full width up to the max width */
+}
+
+/* Other styles remain the same */
+.card-img-top {
+  border-bottom: 5px solid #343a40;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.release-date,
+.rating {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}

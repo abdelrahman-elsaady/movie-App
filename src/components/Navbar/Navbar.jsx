@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { MdFavorite } from 'react-icons/md'; 
-import './navbar.css'; 
+import './Navbar.css'; 
 import { useContext, useEffect, useState } from 'react';
 import { FaFilm } from 'react-icons/fa'; // Import an icon
 

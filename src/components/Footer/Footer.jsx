@@ -89,9 +89,9 @@ export default function Footer() {
       </MDBContainer>
 
       <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
-        <a className='text-dark' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+        © 2024 Copyright:
+        <a className='text-dark' href='https://my-portifolio-reactjs-flame.vercel.app/'>
+          MyPortifolio.com
         </a>
       </div>
     </MDBFooter>

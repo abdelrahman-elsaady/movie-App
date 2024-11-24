@@ -1,0 +1,160 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #141414;
+  color: white;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.card-img-top {
+  max-height: 500px;
+  object-fit: cover;
+  border-bottom: 5px solid #343a40;
+}
+
+.meta-info {
+  font-size: 1.1rem;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.ratio {
+  background-color: #000;
+}
+
+/* Season and Cast Cards */
+.card .card {
+  transition: transform 0.2s ease;
+}
+
+.card .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .details-container {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .meta-info {
+    font-size: 1rem;
+  }
+}
+
+/* Trailer Modal Styles */
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.3s ease;
+}
+
+.trailer-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  animation: modalScaleIn 0.3s ease;
+}
+
+.trailer-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.close-trailer {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.close-trailer:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Modal Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .trailer-modal {
+    padding: 1rem;
+  }
+  
+  .trailer-content {
+    width: 95%;
+  }
+  
+  .close-trailer {
+    top: -40px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+} 

@@ -5,5 +5,10 @@ export const EN={
     "favourite": "Favourite",
     "login": "Login",
     "register": "Register",
-    "aboda_movies": "Aboda Movies"
+    "aboda_movies": "Aboda Movies",
+    "series": "TV Series",
+    "seasons": "Seasons",
+    "episodes": "Episodes",
+    "air_date": "Air Date",
+    "first_air_date": "First Air Date"
 }

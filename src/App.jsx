@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer/Footer'
@@ -15,6 +14,8 @@ import { LangProvider } from './context/lang'
 import { useState } from 'react'
 // import { EN } from "./Lang/En";
 // import { AR } from "../../Lang/AR";
+import Series from './components/Series/Series';
+import SeriesDetails from './components/Series/SeriesDetails';
 
 function App() {
 
@@ -44,10 +45,11 @@ function App() {
 
       <Route path='/' element={<Home />}/>
       <Route path='/Home' element={<Home />}/>
+      <Route path='/series' element={<Series />}/>
+      <Route path='/series/:id' element={<SeriesDetails />}/>
       <Route path='/Favourite' element={<Favourite />}/>
       <Route path='/Login' element={<Login />}/>
       <Route path='/Register' element={<Register />}/>
-      <Route path='/Details' element={<Details />}/>
       <Route path='/Details/:id' element={<Details />}/>
 
       </Routes>

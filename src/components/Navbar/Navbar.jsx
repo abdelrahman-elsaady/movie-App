@@ -54,6 +54,9 @@ useEffect(() => {
             <NavLink to="/Home" className="nav-link text-light fs-5">
               {translate.movies}
             </NavLink>
+            <NavLink to="/series" className="nav-link text-light fs-5">
+              {translate.series}
+            </NavLink>
             <NavLink to="/Favourite" className="nav-link text-light fs-5 d-flex align-items-center">
               <MdFavorite className="me-2" />
               {translate.favourite}

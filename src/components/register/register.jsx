@@ -1,83 +1,146 @@
-import { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import Form from 'react-bootstrap/Form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import '../Auth/auth.css';
+
 export default function Register() {
-
-
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   
-   const{register,handleSubmit,watch,formState:{errors}} = useForm()
+  const { 
+    register, 
+    handleSubmit, 
+    watch,
+    formState: { errors } 
+  } = useForm();
 
-   useEffect(()=>{
-       console.log(errors);
-    
-   },[errors])
+  const password = watch('password');
 
-
-const login =(data)=>{
+  const onSubmit = (data) => {
     console.log(data);
-    
-}
+    // Add your registration logic here
+    // On success:
+    // navigate('/login');
+  };
 
-const IsPasswordMatch =watch('password')
+  return (
+    <div className="auth-container">
+      <Form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="auth-title">Sign Up</h2>
 
-  return ( <> 
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter your name"
+            {...register('name', {
+              required: 'Name is required',
+              minLength: {
+                value: 2,
+                message: 'Name must be at least 2 characters'
+              }
+            })}
+          />
+          {errors.name && (
+            <div className="error-message">{errors.name.message}</div>
+          )}
+        </Form.Group>
 
-<div className='container-fluid '>
-  <div className='row row d-flex justify-content-center '>
-<Form className='col-6 b-black border border-danger ' onSubmit={handleSubmit(login)} >
+        <Form.Group className="mb-3">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Choose a username"
+            {...register('username', {
+              required: 'Username is required',
+              validate: value => !/\s/.test(value) || 'Username cannot contain spaces'
+            })}
+          />
+          {errors.username && (
+            <div className="error-message">{errors.username.message}</div>
+          )}
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="name"  {...register('Name',{required:" name is required"})}/>
-      </Form.Group>
-      {errors.Name && <p className='text-danger'>{errors.Name.message}</p>}
+        <Form.Group className="mb-3">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: 'Please enter a valid email'
+              }
+            })}
+          />
+          {errors.email && (
+            <div className="error-message">{errors.email.message}</div>
+          )}
+        </Form.Group>
 
+        <Form.Group className="mb-3">
+          <Form.Label>Password</Form.Label>
+          <div className="password-input-wrapper">
+            <Form.Control
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              {...register('password', {
+                required: 'Password is required',
+                minLength: {
+                  value: 8,
+                  message: 'Password must be at least 8 characters'
+                }
+              })}
+            />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+          {errors.password && (
+            <div className="error-message">{errors.password.message}</div>
+          )}
+        </Form.Group>
 
+        <Form.Group className="mb-3">
+          <Form.Label>Confirm Password</Form.Label>
+          <div className="password-input-wrapper">
+            <Form.Control
+              type={showConfirmPassword ? 'text' : 'password'}
+              placeholder="Confirm password"
+              {...register('confirmPassword', {
+                required: 'Please confirm your password',
+                validate: value => value === password || 'Passwords do not match'
+              })}
+            />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+          {errors.confirmPassword && (
+            <div className="error-message">{errors.confirmPassword.message}</div>
+          )}
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>User name</Form.Label>
-        <Form.Control type="text" placeholder="userName"  {...register('userName',{required:"user name is required", validate: value => !/\s/.test(value) || "Username cannot contain spaces"} )}/>
-      </Form.Group>
-      {/* {errors.userName?.type=="required"&&<p className='text-danger'>userName is required</p>} */}
-      {errors.userName && <p className='text-danger'>{errors.userName.message}</p>}
+        <button className="auth-button" type="submit">
+          Sign Up
+        </button>
 
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email"  {...register('emaill',{required: "Email is required",
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address"}})}  />
-      </Form.Group>
-      {errors.emaill && <p className='text-danger'>{errors.emaill.message}</p>}
-
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"  {...register('password',{required: "Password is required"  ,minLength: {
-              value: 8,
-              message: "Password must be at least 8 characters"
-            }})}/>
-      </Form.Group>
-      {/* {errors.password?.type=="required"&&<p className='text-danger'>pass is required</p>} */}
-      {errors.password && <p className='text-danger'>{errors.password.message}</p>}
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>confirm pass</Form.Label>
-        <Form.Control type="password" placeholder="confirmPass"  {...register('confirmPass',{required:"Confirm Password is required",validate: value => value == IsPasswordMatch || "Passwords do not match"})}/>
-      </Form.Group>
-      {errors.confirmPass && <p className='text-danger'>{errors.confirmPass.message}</p>}
-
-
-    
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <Link to="/login" className="auth-link">
+          Already have an account? Sign in
+        </Link>
+      </Form>
     </div>
-    </div>
-</>
-
-
-)
+  );
 }

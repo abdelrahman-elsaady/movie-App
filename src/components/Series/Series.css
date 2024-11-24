@@ -1,0 +1,107 @@
+.series-container {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.search-section {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+.img-hover-scale {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+  height: 400px;
+  object-fit: cover;
+}
+
+.img-hover-scale:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  transition: transform 0.2s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  background-color: #1a1a1a;
+}
+
+.card-title {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #1f1f1f;
+  border-top: 3px solid #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Bootstrap button overrides */
+.btn-danger {
+  background-color: #e50914;
+  border-color: #e50914;
+}
+
+.btn-danger:hover {
+  background-color: #f40612;
+  border-color: #f40612;
+}
+
+.btn-primary {
+  background-color: #0071eb;
+  border-color: #0071eb;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:disabled {
+  background-color: #4a4a4a;
+  border-color: #4a4a4a;
+} 

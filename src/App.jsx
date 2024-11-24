@@ -40,7 +40,7 @@ function App() {
 
       <BrowserRouter>
       <Navbarr/>
-<div className='m-5'>
+{/* <div className='m-5'> */}
       <Routes>
 
       <Route path='/' element={<Home />}/>
@@ -53,7 +53,7 @@ function App() {
       <Route path='/Details/:id' element={<Details />}/>
 
       </Routes>
-      </div>
+      {/* </div> */}
       
       <Footer/>
 

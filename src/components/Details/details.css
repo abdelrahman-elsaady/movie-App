@@ -426,3 +426,132 @@
     flex-wrap: wrap;
   }
 }
+
+/* Responsive Design Updates */
+@media (max-width: 1200px) {
+  .hero-content {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .movie-poster {
+    width: 250px;
+  }
+
+  .movie-info h1 {
+    font-size: 3rem;
+  }
+
+  .content-sections {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-banner {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .movie-meta {
+    justify-content: center;
+  }
+
+  .genres {
+    justify-content: center;
+  }
+
+  .cast-grid, .similar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .cast-image img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-poster {
+    width: 200px;
+  }
+
+  .movie-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .movie-meta {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .overview {
+    font-size: 1rem;
+  }
+
+  .play-trailer {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .content-sections h2 {
+    font-size: 1.5rem;
+  }
+
+  .cast-grid, .similar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .cast-image img {
+    height: 210px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .movie-info h1 {
+    font-size: 2rem;
+  }
+
+  .cast-grid, .similar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cast-image img {
+    height: auto;
+  }
+
+  .cast-info h3 {
+    font-size: 1rem;
+  }
+
+  .cast-info p {
+    font-size: 0.8rem;
+  }
+
+  .trailer-modal {
+    padding: 0.5rem;
+  }
+
+  .close-trailer {
+    top: -35px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}

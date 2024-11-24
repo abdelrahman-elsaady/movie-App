@@ -23,7 +23,8 @@ export default function Home() {
   }, [search, pageNumber, lang]);
 
   return (
-
+    <>
+      <div className='container-fluied'>
     <div className="movies-container">
       {/* Search Section */}
       <div className="search-section">
@@ -116,5 +117,8 @@ export default function Home() {
         </>
       )}
     </div>
+    </div>
+      </>
+
   );
 }

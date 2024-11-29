@@ -77,11 +77,11 @@
   bottom: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
 }
-
+/* 
 .hero-content {
   position: relative;
   z-index: 1;
-}
+} */
 
 .content-grid {
   max-width: 1200px;

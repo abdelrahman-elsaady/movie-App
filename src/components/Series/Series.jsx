@@ -29,6 +29,7 @@ export default function Series() {
         
         const response = await Instance.get(endpoint);
         setSeries(response.data.results);
+        console.log(response.data.results);
       } catch (err) {
         setError('Failed to fetch series');
         console.error(err);

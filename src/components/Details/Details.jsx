@@ -19,10 +19,10 @@ export default function Details() {
     const fetchMovieData = async () => {
       try {
         const [movieRes, similarRes] = await Promise.all([
-          Instance.get(`/movie/${id}`, {
+          Instance.get(`/movie/${id}?language=${lang}`, {
             params: { append_to_response: "videos,credits,reviews" }
           }),
-          Instance.get(`/movie/${id}/similar`)
+          Instance.get(`/movie/${id}/similar?language=${lang}`)
         ]);
 
         setMovie(movieRes.data);

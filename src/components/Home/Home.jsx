@@ -20,6 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(movieAction({ search, pageNumber, lang }));
+    console.log(Movies);
   }, [search, pageNumber, lang]);
 
   return (

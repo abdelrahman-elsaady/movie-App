@@ -1,3 +1,5 @@
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/abdelrahman-elsaady/movie-App)
 # Movie App
 
 A modern web application for browsing and discovering movies and TV series, built with React and Vite.
